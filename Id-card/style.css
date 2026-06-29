@@ -1,0 +1,144 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Page Background : center card both vertically & horizontally ===== */
+.card-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Card basic box ===== */
+.id-card {
+  width: 340px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Header: dark gradient block with logo + text centered ===== */
+.card-header {
+  background: linear-gradient(180deg, #08284a, #0a3a65);
+  padding: 28px 0 100px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.card-header p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+/* ===== Profile photo container that overlaps header and body ===== */
+.photo-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 120px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* photo itself fills the circle */
+.photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===== Card body below the photo ===== */
+.card-body {
+  padding: 90px 24px 20px;
+  text-align: center;
+}
+
+/* ===== Student Info ===== */
+.student-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0b2742;
+}
+
+.college {
+  font-size: 15px;
+  color: #334155;
+}
+
+/* ===== Divider ===== */
+.divider {
+  margin: 16px auto;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #e6e9ee;
+}
+
+/* ===== Details ===== */
+.details p {
+  color: #344154;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+/* ===== ID Number badge ===== */
+.id-line {
+  margin: 12px auto 0;
+  display: inline-block;
+  background: #07294b;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.id-label {
+  margin-right: 6px;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* ===== Barcode simulated with repeating-linear-gradient ===== */
+.barcode {
+  margin: 18px auto 8px;
+  width: 60%;
+  height: 32px;
+  background-image: repeating-linear-gradient(90deg, #0b2742 0 4px, #fff 4px 8px);
+}
+
+/* ===== Footer ===== */
+.card-footer {
+  background: #f9fafb;
+  padding: 10px 18px;
+  text-align: center;
+  border-top: 1px solid #e6e9ee;
+}
+
+.footer-text {
+  color: #5b6677;
+  font-size: 12px;
+}
