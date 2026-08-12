@@ -1,0 +1,49 @@
+/* Step 3: Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Step 4: Hero section - flexbox container */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+/* Step 5: Poster image styling */
+.poster {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.poster:hover {
+    transform: scale(1.08);
+}
+
+/* Poster card container */
+.poster-card {
+    flex: 1 1 200px;
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Step 6: Movie name and rating/genre text */
+.poster-card h2,
+.poster-card p {
+    font-size: 1.1rem;
+    margin: 10px 0 5px 0;
+}
