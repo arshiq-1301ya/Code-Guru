@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops Assignment Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Loops Assignment Tester</h1>
+    <p>Click the button below to execute the functions from your <code>loops.js</code> file and view the output.</p>
+    
+    <button onclick="runTests()">Run Assignment Tests</button>
+
+    <h3>Console Output Preview:</h3>
+    <pre id="output">Click "Run Assignment Tests" to view results...</pre>
+
+    <script src="loops.js"></script>
+
+    <script>
+        function runTests() {
+            let logWindow = "";
+
+            function log(title, data) {
+                logWindow += `=== ${title} ===\n${JSON.stringify(data, null, 2)}\n\n`;
+            }
+
+            function logPattern(title, patternFunc) {
+                logWindow += `=== ${title} ===\n${patternFunc()}\n`;
+            }
+
+            try {
+                // Section 1 Tests
+                log("FizzBuzz (Limit: 15)", fizzBuzz(15));
+                log("GCD (12, 18)", calculateGCD(12, 18));
+                log("GCD (25, 15)", calculateGCD(25, 15));
+                log("Sum of Multiples (50)", sumOfMultiples(50));
+                
+                logPattern("Pattern 1", pattern1);
+                logPattern("Pattern 2", pattern2);
+                logPattern("Pattern 3", pattern3);
+                logPattern("Pattern 5", pattern5);
+                logPattern("Pattern 6", pattern6);
+                
+                log("Advanced Loop (Limit: 7)", advancedLoop(7));
+
+                // Section 2 Tests
+                log("Task 1 (Hello World x10)", task1());
+                log("Task 2 (Array)", task2());
+                log("Task 3 (Error Prediction)", task3());
+                log("Task 4 (Var Scope value)", task4());
+                log("Task 5 (Table of 5)", task5());
+                log("Task 6", task6());
+                log("Task 7", task7());
+                log("Task 8", task8());
+                log("Task 9", task9());
+                log("Task 10", task10());
+                log("Task 11", task11());
+                log("Task 12", task12());
+                log("Task 13", task13());
+                log("Task 14", task14());
+                log("Task 15", task15());
+
+                document.getElementById("output").textContent = logWindow;
+                console.log("All tests executed successfully!");
+            } catch (error) {
+                document.getElementById("output").textContent = "Error executing functions: " + error.message + "\n\nMake sure your 'loops.js' file is in the same folder and has no typos.";
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
