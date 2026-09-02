@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions Test</title>
+</head>
+<body>
+    <h1>Open your browser console to see the assignment test results!</h1>
+    <p>Right-click this page, select <strong>Inspect</strong>, and go to the <strong>Console</strong> tab.</p>
+
+    <script type="module">
+        import { 
+            calculateArea, isProfitable, checkCharacter, checkType, 
+            isPrime, getType, triangleArea, findGreater, 
+            printFunctionName, greetUser, isEven, performOperation,
+            add, subtract, multiply 
+        } from './functions.js';
+
+        // --- RUNNING TEST CASES FROM THE ASSIGNMENT ---
+        console.log("--- Assignment Test Output ---");
+
+        // Q1
+        console.log("Q1 (calculateArea 5, 4):", calculateArea(5, 4)); // Expected: 20
+
+        // Q2
+        console.log("Q2 (isProfitable 1000, 500):", isProfitable(1000, 500)); // Expected: true
+        console.log("Q2 (isProfitable 500, 1000):", isProfitable(500, 1000)); // Expected: false
+
+        // Q3
+        console.log("Q3 (checkCharacter 'A'):", checkCharacter('A')); // Expected: "Capital letter"
+        console.log("Q3 (checkCharacter 'z'):", checkCharacter('z')); // Expected: "Small letter"
+        console.log("Q3 (checkCharacter '5'):", checkCharacter('5')); // Expected: "Not a letter"
+
+        // Q4 & Q6
+        console.log("Q4 (checkType 5):", checkType(5)); // Expected: "number"
+        console.log("Q6 (getType true):", getType(true)); // Expected: "boolean"
+
+        // Q5
+        console.log("Q5 (isPrime 7):", isPrime(7)); // Expected: true
+        console.log("Q5 (isPrime 10):", isPrime(10)); // Expected: false
+
+        // Q7
+        console.log("Q7 (triangleArea 10, 5):", triangleArea(10, 5)); // Expected: 25
+
+        // Q8
+        console.log("Q8 (findGreater 10, 20):", findGreater(10, 20)); // Expected: 20
+
+        // Q9
+        console.log("Q9 (printFunctionName):", printFunctionName()); // Expected: "printFunctionName"
+
+        // Q10
+        console.log("Q10 (greetUser 'Sindhura'):", greetUser("Sindhura")); // Expected: "Hello, Sindhura!"
+        console.log("Q10 (greetUser no param):", greetUser()); // Expected: "Hello, Guest!"
+
+        // Q11
+        console.log("Q11 (isEven 4):", isEven(4)); // Expected: true
+
+        // Q12
+        console.log("Q12 (performOperation add):", performOperation(5, 3, add)); // Expected: 8
+        console.log("Q12 (performOperation subtract):", performOperation(5, 3, subtract)); // Expected: 2
+        console.log("Q12 (performOperation multiply):", performOperation(5, 3, multiply)); // Expected: 15
+    </script>
+</body>
+</html>
