@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditionals Test</title>
+</head>
+<body>
+    <h1>JavaScript Conditionals Assignment</h1>
+    <p>Open your browser console (F12 -> Console) to see the test results!</p>
+
+    <script src="conditionals.js"></script>
+
+    <script>
+        console.log("--- Automated Test Cases ---");
+        console.log("Task 1 (Max of Three):", findMax(10, 25, 5) === 25 ? "Passed" : "Failed");
+        console.log("Task 2 (Leap Year):", isLeapYear(2024) === true ? "Passed" : "Failed");
+        console.log("Task 3 (Even or Odd):", checkEvenOdd(4) === "even" ? "Passed" : "Failed");
+        console.log("Task 4 (Character Type):", checkCharType("@") === "special" ? "Passed" : "Failed");
+        console.log("Task 5 (Valid Triangle):", isValidTriangle(60, 60, 60) === true ? "Passed" : "Failed");
+    </script>
+</body>
+</html>
