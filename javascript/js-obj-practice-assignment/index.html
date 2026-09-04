@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Unit 7: Objects Test Runner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .test-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .pass { background-color: #2ecc71; color: white; }
+        .info { background-color: #3498db; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>JS Unit 7: Objects Assignment Visualizer</h1>
+    <p>Open your browser's Console (Press <strong>F12</strong> or <strong>Ctrl+Shift+I</strong>) to inspect the objects manually!</p>
+
+    <div class="test-card">
+        <h3>Task 1: Dynamic Property Access</h3>
+        <span class="status-badge info">Output Preview</span>
+        <p>Checking <code>getUserDetail("city")</code> and <code>getUserDetail("age")</code>:</p>
+        <pre id="task1-output">Running...</pre>
+    </div>
+
+    <div class="test-card">
+        <h3>Task 2: Updating Object Values</h3>
+        <span class="status-badge info">Output Preview</span>
+        <p>Original <code>marks</code> vs Returned <code>updatedMarks</code> (+5):</p>
+        <pre id="task2-output">Running...</pre>
+    </div>
+
+    <div class="test-card">
+        <h3>Task 3: Modifying Objects</h3>
+        <span class="status-badge info">Output Preview</span>
+        <p>Final modified <code>book</code> object state:</p>
+        <pre id="task3-output">Running...</pre>
+    </div>
+
+    <div class="test-card">
+        <h3>Task 4: Object Methods & This</h3>
+        <span class="status-badge info">Output Preview</span>
+        <p>Creating "Laptop" (Price: 1000, Discount: 150) and applying updates:</p>
+        <pre id="task4-output">Running...</pre>
+    </div>
+
+    <script src="objects.js"></script>
+
+    <script>
+        try {
+            // Test Task 1
+            const detail1 = getUserDetail("city");
+            const detail2 = getUserDetail("age");
+            document.getElementById("task1-output").textContent = 
+                `getUserDetail("city") -> "${detail1}"\n` +
+                `getUserDetail("age")  -> "${detail2}"`;
+
+            // Test Task 2
+            const originalMarks = JSON.stringify(marks, null, 2);
+            const newMarks = JSON.stringify(updateMarks(), null, 2);
+            document.getElementById("task2-output").textContent = 
+                `Original Marks:\n${originalMarks}\n\n` +
+                `Updated Marks (returned value):\n${newMarks}`;
+
+            // Test Task 3
+            const originalBookRepresentation = `{\n  title: "The Mystery Box",\n  author: "A. Writer",\n  publishedYear: 2010,\n  isAvailable: true\n}`;
+            const modifiedBook = JSON.stringify(modifyBook(), null, 2);
+            document.getElementById("task3-output").textContent = 
+                `Original Book:\n${originalBookRepresentation}\n\n` +
+                `Modified Book (returned value):\n${modifiedBook}`;
+
+            // Test Task 4
+            const product = createProduct("Laptop", 1000, 150);
+            const initialFinalPrice = product.calculateFinalPrice();
+            const updatedPrice = product.updateDiscount(200);
+            document.getElementById("task4-output").textContent = 
+                `Product Created:\n${JSON.stringify(product, null, 2)}\n\n` +
+                `Initial final price: ${initialFinalPrice}\n` +
+                `Calling updateDiscount(200) -> returns updated final price: ${updatedPrice}\n` +
+                `Updated product state:\n${JSON.stringify(product, null, 2)}`;
+
+        } catch (error) {
+            console.error(error);
+            document.body.innerHTML += `<div style="background:#e74c3c; color:white; padding:20px; border-radius:5px;"><strong>Error running tests:</strong> ${error.message}</div>`;
+        }
+    </script>
+</body>
+</html>
